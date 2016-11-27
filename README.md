@@ -13,4 +13,4 @@ Rob Taracha:
 
 Brian Thompson: Java implementation of touch-screen quiz.
 
-Gabriel Bourget:
+Gabriel Bourget: Storyboarding and history research. Put together wireframe mockups of the introduction screen, quiz images, and an approximation of what someone's completed Naval Academy Journal would look like when sent to them via email.
