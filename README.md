@@ -15,4 +15,6 @@ Brian Thompson: Java implementation of touch-screen quiz.
 
 Gabriel Bourget: Storyboarding and history research. Put together wireframe mockups of the introduction screen, quiz images, and an approximation of what someone's completed Naval Academy Journal would look like when sent to them via email.
 
+Also wrote up a design brief that sketched out some initial details for the project, along with projections of how it can be built on and improved in the future ("Museum VX Hackathon Design Brief.doc").
+
 Cameron Rice: Created on screen touch keyboard for acquisition of user email.
