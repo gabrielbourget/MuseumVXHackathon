@@ -7,7 +7,7 @@ Link to presentation slides that went along with this project: https://prezi.com
 
 Brandon Keohane:
 
-Fahim Farque: Setup up webserver to host mysql database server, design database and php to send email
+Fahim Farque: Setup up webserver to host mysql database server, design database and php code to send email
 
 Rob Taracha:
 
