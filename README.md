@@ -11,6 +11,6 @@ Fahim Farque: Setup up webserver to host mysql database server, design database 
 
 Rob Taracha:
 
-Brian Thompson:
+Brian Thompson: Java implementation of touch-screen quiz.
 
 Gabriel Bourget:
