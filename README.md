@@ -9,7 +9,7 @@ Brandon Keohane: Setup the communication process between swing components/classe
 
 Fahim Farque: Setup up webserver to host mysql database server, design database and php code to send email
 
-Rob Taracha:
+Rob Taracha: Wrote PHP code to connect the Java application to the back-end database.
 
 Brian Thompson: Java implementation of touch-screen quiz.
 
