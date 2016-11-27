@@ -5,7 +5,7 @@ Link to presentation slides that went along with this project: https://prezi.com
 
 ---- Contribution List ----
 
-Brandon Keohane:
+Brandon Keohane: Setup the communication process between swing components/classes and the database
 
 Fahim Farque: Setup up webserver to host mysql database server, design database and php code to send email
 
