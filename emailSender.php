@@ -1,7 +1,8 @@
-Php 
-
-
 	<?php
+	
+	//Swiftmailer needs to installed and configured on webserver to allow emails
+
+
 	$true = 1; 
 	$username = "hive1";
 	$password = "hive1";
@@ -19,22 +20,17 @@ Php
 	echo 'Connected successfully';
 	
 	mysql_select_db($dbname);
-	
     
+
     //update email_sent
 
-
 	$query_user_update = "UPDATE users set email_sent=1 where email_sent=0 order by Last_visit desc limit 1";
-
 
 	$result_user_update = mysql_query($query_user_update) or die('Invalid query: ' . mysql_error());
 
 
-
-
 	
 	if (mysql_affected_rows() ){ 
-
 
 		$query = "SELECT * from users order by Last_visit desc limit 1";
 		$result = mysql_query($query) or die('Invalid query: ' . mysql_error());
@@ -49,13 +45,9 @@ Php
 			}
 
 
-
-
 	
 
-
 				$query = "SELECT * FROM exhibits WHERE User_id = '$userid'";
-
 
 				$result = mysql_query($query) or die('Invalid query: ' . mysql_error());
 				$numRows = mysql_num_rows($result);
@@ -93,10 +85,7 @@ Php
 				
 				$result = mysql_query($query) or die('Invalid query: ' . mysql_error());
 
-
 				$userinfo = mysql_fetch_row($result);
-
-
 
 
 					for($i=0;$i<$numRows; ++$i)
@@ -108,57 +97,50 @@ Php
 					}
 
 
-
-
 				echo "email sending<br>";
 				printf("useremail".$rows[6]);
 
+				//send email
+				/////////////////////////////////////////////////////	
 
-				//send email	
+			   require_once "vendor/swiftmailer/swiftmailer/lib/swift_required.php";
+			  
 
+			   echo "files loaded";
 
-				$to = $useremail;
-				$subject = "Your Academy Journal";
+			    $transport = Swift_SmtpTransport::newInstance('smtp.gmx.com', 25)
+			        ->setUsername('amrakori@gmx.com')
+			        ->setPassword('Pear#101');
+			    $mailer = Swift_Mailer::newInstance($transport);
+			    $message = Swift_Message::newInstance('Wonderful Subject')
+			        ->setFrom(array('amrakori@gmx.com' => 'Museum'))
+			        ->setTo(array( $rows[6] => 'Visitor'));
 
+			    echo "<br>email setting up";
 
-				$message = "
-				<html>
-				<body>
-				<p>This email contains HTML Tags!</p>
-				<table>
-				<tr>
-				<th>Firstname</th>
-				<th>Lastname</th>
-				</tr>
-				<tr>
-				<td>John</td>
-				<td>Doe</td>
-				</tr>
-				</table>
-				</body>
-				</html>
-				";
-
-
-				// Always set content-type when sending HTML email
-				$headers = "MIME-Version: 1.0" . "\r\n";
-				$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-
-				// More headers
-				$headers .= 'From: <webmaster@example.com>' . "\r\n";
-				$headers .= 'Cc: myboss@example.com' . "\r\n";
-
-
-				mail($to,$subject,$message,$headers);
+			    $message->setBody(
+			    	'<html>
+			    		<head>
+						<title>Lab 4 - index.html</title>
+						<meta http-equiv="Content-Type" charset="utf-8">
+						</head>
+					    <body>'.
+					     <img src="WholeEmail.jpg"></img>   
+					    .'</body>
+					</html>');
+			    if (!$mailer->send($message, $errors))
+			    {
+			        echo "Error:";
+			        print_r($errors);
+			    }
 				
-
+				////////////////////////////////////////////////////////
 
 	}//end of if to send
 
 
-
-
+	// Free the resources associated with the result set
+	// This is done automatically at the end of the script
 	mysql_free_result($result);
 	
 	?>
