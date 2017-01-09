@@ -4,11 +4,11 @@
 
 
 	$true = 1; 
-	$username = "hive1";
-	$password = "hive1";
+	$username = "h***1";
+	$password = "h***1";
 	$hostname = "104.131.92.40";
 	//$hostname = "localhost";
-	$dbname = "hivedata";
+	$dbname = "h*********a";
 	
 	//connection to database
 	
@@ -110,7 +110,7 @@
 
 			    $transport = Swift_SmtpTransport::newInstance('smtp.gmx.com', 25)
 			        ->setUsername('amrakori@gmx.com')
-			        ->setPassword('Pear#101');
+			        ->setPassword('P********1');
 			    $mailer = Swift_Mailer::newInstance($transport);
 			    $message = Swift_Message::newInstance('Wonderful Subject')
 			        ->setFrom(array('amrakori@gmx.com' => 'Museum'))
